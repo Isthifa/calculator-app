@@ -53,7 +53,7 @@ function App() {
         <button name="+" className="operator">+</button>
         <button className="zero" name="0">0</button>
         <button name="." >.</button>
-        <button name="=" className="operator">=</button>
+        <button name="=" id="equal">=</button>
       </div>
     </div>
   )
