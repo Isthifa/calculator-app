@@ -1,3 +1,6 @@
+#SS
+![image](https://github.com/Isthifa/calculator-app/assets/87200953/c1fa1906-f6dd-4b5c-9197-f8193149bb0c)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
