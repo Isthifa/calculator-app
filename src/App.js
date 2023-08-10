@@ -5,30 +5,51 @@ function App() {
   const [result, setResult] = useState("");
 
   const handleClick = (e) => {
-    if(e.target.name === "clear"){
-      try{
+    switch(e.target.name){
+      case "clear":
         setResult("");
-      }catch(err){
-        setResult("Error");
-      }}else if(e.target.name === "c"){
+        break;
+      case "c":
+        setResult(result.slice(0, -1));
+        break;
+      case "=":
         try{
-          setResult(result.slice(0, -1));
+          setResult(eval(result).toString()); //eval is a function that evaluates the string and returns the result of the expression in the string
         }catch(err){
           setResult("Error");
-        }}else if(e.target.name === "="){
-          try{
-            setResult(eval(result).toString()); //eval is a function that evaluates the string and returns the result of the expression in the string 
-            //eval evaluates math expressions in strings and returns the result of the expression in the string
-          }catch(err){
-            setResult("Error");
-          }}
-        else{
-      try{
+        }
+        break;
+      default:
         setResult(result.concat(e.target.name));
-      }catch(err){
-        setResult("Error");
-        }}
-      }
+        break;
+    }
+  }
+    //
+
+    // if(e.target.name === "clear"){
+    //   try{
+    //     setResult("");
+    //   }catch(err){
+    //     setResult("Error");
+    //   }}else if(e.target.name === "c"){
+    //     try{
+    //       setResult(result.slice(0, -1));
+    //     }catch(err){
+    //       setResult("Error");
+    //     }}else if(e.target.name === "="){
+    //       try{
+    //         setResult(eval(result).toString()); //eval is a function that evaluates the string and returns the result of the expression in the string 
+    //         //eval evaluates math expressions in strings and returns the result of the expression in the string
+    //       }catch(err){
+    //         setResult("Error");
+    //       }}
+    //     else{
+    //   try{
+      //   setResult(result.concat(e.target.name));
+      // }catch(err){
+      //   setResult("Error");
+      //   }}
+      // }
 
   return (
     <div className="calculator">
